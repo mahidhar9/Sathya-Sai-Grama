@@ -1,0 +1,4 @@
+<View style="{styles.inputContainer}">
+  <Text style="{styles.label}">Date of Visit:</Text>
+  <DatePicker date="{date}" onDateChange="{setDate}" />
+</View>
