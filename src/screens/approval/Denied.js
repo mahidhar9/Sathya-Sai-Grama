@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const FillByYourSelf = () => {
+const Denied = () => {
   return (
     <View>
-      <Text>FillByYourSelf</Text>
+      <Text>Denied</Text>
     </View>
   )
 }
 
-export default FillByYourSelf
+export default Denied
 
 const styles = StyleSheet.create({})

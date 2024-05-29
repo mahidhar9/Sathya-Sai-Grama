@@ -5,8 +5,9 @@ function ContextProvider({children}) {
 
    const [userEmail, setUserEmail] = useState()
    const [L1ID, setL1ID] = useState()
+   const [accessToken, setAccessToken] = useState('')
   return (
-    <UserContext.Provider value={{userName, setUserName,L1ID,setL1ID}}>
+    <UserContext.Provider value={{userEmail, setUserEmail, L1ID, setL1ID, accessToken, setAccessToken}}>
       {children}
     </UserContext.Provider>
   )

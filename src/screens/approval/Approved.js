@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const FillByYourSelf = () => {
+const Approved = () => {
   return (
-    <View>
-      <Text>FillByYourSelf</Text>
+    <View style={{flex:1,}}>
+      <Text>Approved</Text>
     </View>
   )
 }
 
-export default FillByYourSelf
+export default Approved
 
 const styles = StyleSheet.create({})

@@ -5,6 +5,7 @@ import { useForm, Controller } from 'react-hook-form';
 import {auth} from '../auth/firebaseConfig';
 import { getAccessFromRefresh } from '../components/RefreshToken';
 import {createUserWithEmailAndPassword, sendEmailVerification} from 'firebase/auth'
+import {APP_OWNER_NAME, APP_LINK_NAME, BASE_APP_URL} from "@env"
 
 const Register = ({ navigation }) => {
 
@@ -16,10 +17,10 @@ const Register = ({ navigation }) => {
     setLoading(true);
     console.log(userCred.email)
     //check data exists
-    const appOwnerName = 'annapoornaapp'; // Replace with your actual Zoho app owner name
-    const appLinkName = 'ashram-visitor-management'; // Replace with your actual app link name
+    const appOwnerName = APP_OWNER_NAME // Replace with your actual Zoho app owner name
+    const appLinkName = APP_LINK_NAME; // Replace with your actual app link name
     const reportName = 'All_App_Users'; // Replace with your actual report name
-    const url = `https://creator.zoho.com/api/v2.1/${appOwnerName}/${appLinkName}/report/${reportName}?criteria=Email=="${userCred.email}"`; // Replace with your actual Zoho Creator URL
+    const url = `${BASE_APP_URL}/${appOwnerName}/${appLinkName}/report/${reportName}?criteria=Email=="${userCred.email}"`; // Replace with your actual Zoho Creator URL
 
     
     console.log(url)
@@ -32,7 +33,7 @@ const Register = ({ navigation }) => {
           Authorization: `Zoho-oauthtoken ${access_token}`
         },
         params: { 
-          criteria:`Email=="${userCred.email}`
+          criteria:`Email=="${userCred.email}"`
         }
       });    
 

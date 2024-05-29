@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import BaseRoute from "./navigation/stack-navigation/BaseRoute";
+import ContextProvider from "./context/ContextProvider";
+import { getAccessFromRefresh } from "./src/components/RefreshToken"; 
+
 
 const App = () => {
+
+  const token = getAccessFromRefresh()
+  console.log(token)
+
   return (
-    <View>
-      <Text>App</Text>
-    </View>
-  )
-}
+    <ContextProvider>
+      <BaseRoute />
+    </ContextProvider>
+  );
+};
 
-export default App
 
-const styles = StyleSheet.create({})
+export default App;
+
+

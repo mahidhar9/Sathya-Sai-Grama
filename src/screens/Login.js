@@ -12,13 +12,12 @@ import React, { useState, useContext } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import {auth} from '../auth/firebaseConfig';
 import {signInWithEmailAndPassword,sendEmailVerification} from 'firebase/auth'
-import UserContext from '../../context/UserContext';
+
 
 const Login = (props) => {
 
     const [loading, setLoading] = useState(false);
     const { control, handleSubmit, formState: { errors } } = useForm()
-    const {setUserEmail,setL1ID} = useContext(UserContext)
 
     const handleLoginForm = async(userCred) => {
         try {
@@ -29,7 +28,6 @@ const Login = (props) => {
             if (user.emailVerified) {
               // Email is verified, navigate to home
               console.log('User signed in and email verified');
-              setUserEmail(userCred.email)
               props.navigation.navigate('Home');
             } else {
               // Email is not verified, display message and send verification email (if needed)
