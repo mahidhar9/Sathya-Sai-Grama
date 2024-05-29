@@ -1,22 +1,12 @@
-import {View, Text, Button, StyleSheet} from 'react-native';
+import {View, Text} from 'react-native';
 import React from 'react';
 
-const Profile = ({navigation}) => {
+const Profile = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <Text>Profile</Text>
-      <Button title="Click Here" onPress={() => alert('button Clicked')} />
     </View>
   );
 };
 
 export default Profile;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#c19f83',
-  },
-});

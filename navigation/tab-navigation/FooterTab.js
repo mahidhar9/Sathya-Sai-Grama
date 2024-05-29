@@ -67,14 +67,11 @@ function MyTabs() {
         tabBarShowLabel: false,
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
-          position: 'absolute',
-          bottom: 25,
-          left: 20,
-          right: 20,
           backgroundColor: '#ece2e2',
-          borderRadius: 15,
-          height: 80,
-          ...styles.shadow,
+          height: 60,
+          borderTopWidth: 0,
+          elevation: 0,
+          marginTop: 10,
         },
         headerTitleStyle: {
           fontWeight: 'bold',
@@ -87,11 +84,6 @@ function MyTabs() {
         component={InviteStackScreen}
         options={{
           headerShown: false,
-          headerTitleAlign: 'center',
-          headerStyle: {
-            backgroundColor: '#ece2e2',
-          },
-          headerTintColor: '#752a26',
           tabBarIcon: ({focused}) => (
             <View style={styles.iconContainer}>
               <Image
@@ -105,13 +97,13 @@ function MyTabs() {
                   width: 30,
                   height: 30,
                   tintColor: focused ? '#752a26' : 'black',
-                  bottom: 5,
+                  marginBottom: 5,
                 }}
               />
               <Text
                 style={{
                   color: focused ? '#752a26' : 'black',
-                  fontSize: focused ? 14 : 12,
+                  fontSize: 12,
                   fontFamily: 'Inter',
                 }}>
                 INVITE
@@ -125,11 +117,6 @@ function MyTabs() {
         component={MyApprovalsStackScreen}
         options={{
           headerShown: false,
-          headerTitleAlign: 'center',
-          headerStyle: {
-            backgroundColor: '#ece2e2',
-          },
-          headerTintColor: '#752a26',
           tabBarIcon: ({focused}) => (
             <View style={styles.iconContainer}>
               <Image
@@ -143,16 +130,16 @@ function MyTabs() {
                   width: 30,
                   height: 30,
                   tintColor: focused ? '#752a26' : 'black',
-                  bottom: 5,
+                  marginBottom: 5,
                 }}
               />
               <Text
                 style={{
                   color: focused ? '#752a26' : 'black',
-                  fontSize: focused ? 14 : 12,
+                  fontSize: 12,
                   fontFamily: 'Inter',
                 }}>
-                MyApprovals
+                APPROVALS
               </Text>
             </View>
           ),
@@ -199,16 +186,10 @@ function MyTabs() {
     </Tab.Navigator>
   );
 }
-
 export default MyTabs;
-
 const styles = StyleSheet.create({
-  shadow: {
-    elevation: 5,
-  },
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    top: 8,
   },
 });
